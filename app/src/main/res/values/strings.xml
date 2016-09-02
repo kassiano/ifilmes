@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">iFilmes</string>
     <string name="title_activity_detalhes">Detalhes</string>
+    <string name="title_activity_novo_filme">Novo Filme</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

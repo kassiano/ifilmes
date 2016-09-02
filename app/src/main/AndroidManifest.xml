@@ -24,6 +24,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.ifilmes.app.MainActivity" />
         </activity>
+
+         <activity android:name=".NovoFilmeActivity"
+            android:label="@string/title_activity_novo_filme"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.ifilmes.app.MainActivity" />
+
+        </activity>
     </application>
 
 </manifest>

@@ -146,4 +146,8 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public void inserir(View view) {
+        Intent intent = new Intent(this, NovoFilmeActivity.class);
+        startActivity(intent);
+    }
 }
