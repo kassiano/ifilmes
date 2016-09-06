@@ -2,6 +2,8 @@ package br.com.ifilmes.app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -126,20 +128,47 @@ public class MainActivity extends AppCompatActivity
         listAdapter.clear();
 
         if(item.equals("Comédia")){
-            listAdapter.addAll(lstFilmesComedia);
+           // listAdapter.addAll(lstFilmesComedia);
             img_banner.setImageResource(R.drawable.ridiculous_large);
         }else if(item.equals("Ação")){
-            listAdapter.addAll(lstFilmesAcao);
+           // listAdapter.addAll(lstFilmesAcao);
             img_banner.setImageResource(R.drawable.narcos_large);
         }else if(item.equals("Terror")){
-            listAdapter.addAll(lstFilmesTerror);
+           // listAdapter.addAll(lstFilmesTerror);
             img_banner.setImageResource(R.drawable.invocacaomal2_large);
         }else if(item.equals("Drama")){
-            listAdapter.addAll(lstFilmesDrama);
+           // listAdapter.addAll(lstFilmesDrama);
             img_banner.setImageResource(R.drawable.privateryan_large);
         }
 
+        buscarFilmes(item);
     }
+
+    private void buscarFilmes(String genero){
+
+        DatabaseHelper helper = new DatabaseHelper(this);
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor cursor =
+                db.rawQuery("select * from filmes where genero = ?;", new String[] {genero} );
+
+
+        cursor.moveToFirst();
+        List<String> lstFilmes = new ArrayList<>();
+        for(int i =0 ; i < cursor.getCount() ; i++){
+
+            String nomeFilme = cursor.getString(1);
+            lstFilmes.add(nomeFilme);
+
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+
+        listAdapter.addAll(lstFilmes);
+    }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
