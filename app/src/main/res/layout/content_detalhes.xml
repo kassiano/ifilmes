@@ -47,34 +47,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Data de lançamento: 11 de dezembro de 2015 para DVD (1h 59min)"
-                android:textColor="@color/white"
-                />
+                style="@style/textos" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Direção: Frank Coraci"
-                android:textColor="@color/white"
+                style="@style/textos"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Elenco: Adam Sandler, Jorge García, Terry Crews mais"
-                android:textColor="@color/white"
+                style="@style/textos"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gêneros Faroeste, Comédia"
-                android:textColor="@color/white"
+                style="@style/textos"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nacionalidade Eua"
-                android:textColor="@color/white"/>
+                style="@style/textos"
+                />
 
 
             <ImageView
@@ -91,14 +92,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sinopse"
-        android:textColor="@color/white" />
+        style="@style/textos"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Seis meio-irmãos órfãos crescem sob os cuidados de uma tribo indígena e, já adultos, arrumam encrenca na região. Ameaçados, buscam dentro de si mesmos a bravura inexistente para terem chance na luta contra os novos inimigos."
-        android:textColor="@color/white"
+        style="@style/textos"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_weight="2">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
