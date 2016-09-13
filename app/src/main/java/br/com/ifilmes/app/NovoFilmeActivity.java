@@ -29,13 +29,33 @@ public class NovoFilmeActivity extends AppCompatActivity {
         txt_sinopse= (EditText) findViewById(R.id.txt_sinopse_filme);
         txt_imagem= (EditText) findViewById(R.id.txt_imagem);
 
+    }
+
+    private boolean validacao(){
+
+        boolean retorno = true;
+
+        txt_nome_filme.setError(null);
+        txt_genero_filme.setError(null);
+
+        if(txt_nome_filme.getText().toString().isEmpty()){
+            txt_nome_filme.setError("Preencha o nome");
+            retorno = false;
+        }
+
+        if(txt_genero_filme.getText().toString().isEmpty()){
+            txt_genero_filme.setError("Preecnha o genero");
+            retorno = false;
+        }
 
 
-
-
+        return retorno;
     }
 
     public void salvarFilme(View view) {
+
+
+        if(!validacao()) return;
 
         DatabaseHelper helper = new DatabaseHelper(this);
 
